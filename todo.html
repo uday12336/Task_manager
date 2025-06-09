@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="todo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>To-Do List</h1>
+            <a href="index.html" class="back-link">Back to Home</a>
+        </header>
+        <section class="todo">
+            <div class="todo-input">
+                <input type="text" id="todo-input" placeholder="Add a new task...">
+                <button id="add-todo">Add</button>
+            </div>
+            <div class="timer">
+                <h3>Task Timer</h3>
+                <div id="timer-display">00:00:00</div>
+                <input type="number" id="timer-minutes" placeholder="Minutes" min="0">
+                <button id="start-timer">Start</button>
+                <button id="reset-timer">Reset</button>
+            </div>
+            <ul id="todo-list"></ul>
+        </section>
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>

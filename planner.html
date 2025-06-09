@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner</title>
+    <link rel="stylesheet" href="planner.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daily Planner</h1>
+            <a href="index.html" class="back-link">Back to Home</a>
+        </header>
+        <section class="planner">
+            <div id="planner-date"></div>
+            <div class="planner-input">
+                <input type="date" id="planner-date-input">
+                <input type="time" id="planner-time">
+                <input type="text" id="planner-task" placeholder="Add a task...">
+                <button id="add-planner">Add</button>
+            </div>
+            <ul id="planner-list"></ul>
+        </section>
+    </div>
+    <script src="planner.js"></script>
+</body>
+</html>
