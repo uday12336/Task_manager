@@ -4,17 +4,19 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    font-size: clamp(14px, 2.5vw, 16px);
 }
 
 .container {
     max-width: 1200px;
-    margin: 30px auto;
-    padding: 20px;
+    width: 90%;
+    margin: 20px auto;
+    padding: clamp(10px, 3vw, 15px);
 }
 
 header {
     text-align: center;
-    padding: 30px;
+    padding: clamp(20px, 5vw, 30px);
     background: linear-gradient(90deg, #74ebd5, #acb6e5);
     color: white;
     border-radius: 12px;
@@ -25,17 +27,17 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: clamp(1.8em, 5vw, 2.5em);
     font-weight: 600;
 }
 
 .back-link {
     position: absolute;
-    top: 30px;
-    left: 20px;
+    top: clamp(15px, 3vw, 20px);
+    left: clamp(10px, 2vw, 15px);
     color: white;
     text-decoration: none;
-    font-size: 1em;
+    font-size: clamp(0.9em, 2.5vw, 1em);
     font-weight: 600;
 }
 
@@ -45,11 +47,11 @@ header h1 {
 
 section {
     background: white;
-    padding: 25px;
+    padding: clamp(15px, 4vw, 20px);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 25px;
+    margin-top: clamp(15px, 3vw, 20px);
 }
 
 section:hover {
@@ -61,22 +63,26 @@ section:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: clamp(10px, 2.5vw, 15px);
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 #calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 8px;
+    gap: clamp(5px, 1vw, 8px);
     text-align: center;
 }
 
 .day {
-    padding: 12px;
+    padding: clamp(8px, 2vw, 10px);
     border-radius: 8px;
     background: #fff;
     border: 1px solid #e0e0e0;
     transition: background 0.2s ease;
+    font-size: clamp(0.8em, 2vw, 0.9em);
+    touch-action: manipulation;
 }
 
 .day.header {
@@ -97,14 +103,15 @@ section:hover {
 }
 
 button {
-    padding: 10px 20px;
+    padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 18px);
     background: #3498db;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: clamp(0.9em, 2.5vw, 1em);
     transition: background 0.3s ease, transform 0.2s ease;
+    touch-action: manipulation;
 }
 
 button:hover {
@@ -120,5 +127,56 @@ button:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    #calendar {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 5px;
+    }
+
+    .day {
+        padding: clamp(6px, 1.5vw, 8px);
+        font-size: clamp(0.7em, 1.8vw, 0.8em);
+    }
+
+    button {
+        padding: clamp(6px, 1.5vw, 8px) clamp(12px, 2.5vw, 15px);
+        font-size: clamp(0.8em, 2vw, 0.9em);
+    }
+
+    header h1 {
+        font-size: clamp(1.5em, 4vw, 2em);
+    }
+}
+
+@media (max-width: 480px) {
+    #calendar {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 3px;
+    }
+
+    .day {
+        padding: clamp(4px, 1vw, 6px);
+        font-size: clamp(0.6em, 1.5vw, 0.7em);
+    }
+
+    button {
+        padding: clamp(5px, 1vw, 7px) clamp(10px, 2vw, 12px);
+        font-size: clamp(0.7em, 1.8vw, 0.8em);
+    }
+
+    header {
+        padding: clamp(15px, 4vw, 20px);
+    }
+
+    .back-link {
+        font-size: clamp(0.8em, 2vw, 0.9em);
     }
 }

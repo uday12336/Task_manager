@@ -14,10 +14,20 @@
             <a href="index.html" class="back-link">Back to Home</a>
         </header>
         <section class="notes">
+            <input type="text" id="note-title" placeholder="Enter note title...">
             <textarea id="notes-input" placeholder="Write your notes here..."></textarea>
             <button id="save-notes">Save</button>
             <div id="notes-history"></div>
         </section>
+        <!-- Popup for displaying note details -->
+        <div id="note-popup" class="popup">
+            <div class="popup-content">
+                <span id="close-popup" class="close">&times;</span>
+                <h2 id="popup-title"></h2>
+                <p id="popup-text"></p>
+                <p id="popup-timestamp" class="timestamp"></p>
+            </div>
+        </div>
     </div>
     <script src="notes.js"></script>
 </body>

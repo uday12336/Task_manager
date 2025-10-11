@@ -4,17 +4,20 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     max-width: 1200px;
-    margin: 30px auto;
-    padding: 20px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 15px;
 }
 
 header {
     text-align: center;
-    padding: 30px;
+    padding: 20px;
     background: linear-gradient(90deg, #a1c4fd, #c2e9fb);
     color: white;
     border-radius: 12px;
@@ -25,17 +28,17 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     font-weight: 600;
 }
 
 .back-link {
     position: absolute;
-    top: 30px;
-    left: 20px;
+    top: 20px;
+    left: 15px;
     color: white;
     text-decoration: none;
-    font-size: 1em;
+    font-size: clamp(0.9rem, 3vw, 1rem);
     font-weight: 600;
 }
 
@@ -45,11 +48,11 @@ header h1 {
 
 section {
     background: white;
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 section:hover {
@@ -58,25 +61,27 @@ section:hover {
 }
 
 #planner-date {
-    font-size: 1.2em;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
     color: #2c3e50;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .planner-input {
     display: flex;
-    gap: 12px;
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
 }
 
 input[type="date"], input[type="time"], input[type="text"] {
-    flex: 1;
-    padding: 10px;
+    flex: 1 1 100%;
+    padding: 8px;
     border: none;
     border-radius: 8px;
-    font-size: 1em;
+    font-size: clamp(0.9rem, 3vw, 1rem);
     background: #f9f9f9;
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
+    min-width: 0;
 }
 
 input:focus {
@@ -85,14 +90,16 @@ input:focus {
 }
 
 button {
-    padding: 10px 20px;
+    padding: 8px 16px;
     background: #3498db;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 1em;
+    font-size: clamp(0.9rem, 3vw, 1rem);
     transition: background 0.3s ease, transform 0.2s ease;
+    flex: 1 1 100%;
+    max-width: 200px;
 }
 
 button:hover {
@@ -107,14 +114,16 @@ ul {
 
 li {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 8px;
     border-bottom: 1px solid rgba(0,0,0,0.1);
     background: rgba(255,255,255,0.8);
     border-radius: 6px;
     margin-bottom: 8px;
     transition: background 0.2s ease;
+    font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
 li:hover {
@@ -123,6 +132,8 @@ li:hover {
 
 li button {
     background: #e74c3c;
+    flex: 0 0 auto;
+    padding: 6px 12px;
 }
 
 li button:hover {
@@ -137,5 +148,66 @@ li button:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 600px) {
+    .container {
+        width: 85%;
+        padding: 20px;
+    }
+
+    header {
+        padding: 25px;
+    }
+
+    .planner-input {
+        flex-wrap: nowrap;
+    }
+
+    input[type="date"], input[type="time"], input[type="text"] {
+        flex: 1 1 auto;
+        padding: 10px;
+    }
+
+    button {
+        flex: 0 0 auto;
+        padding: 10px 20px;
+        max-width: none;
+    }
+
+    li {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    header {
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .back-link {
+        font-size: 1rem;
+        top: 30px;
+        left: 20px;
+    }
+
+    section {
+        padding: 25px;
+        margin-top: 25px;
+    }
+
+    #planner-date {
+        font-size: 1.2rem;
     }
 }
