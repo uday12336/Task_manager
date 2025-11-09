@@ -152,6 +152,22 @@ li button:hover {
 }
 
 /* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .back-link {
+        position: static;
+        margin-bottom: 10px;
+    }
+
+    header h1 {
+        font-size: clamp(1.5em, 4vw, 1.8em);
+    }
+}
 @media (min-width: 600px) {
     .container {
         width: 85%;
@@ -160,6 +176,7 @@ li button:hover {
 
     header {
         padding: 25px;
+        
     }
 
     .planner-input {
