@@ -103,8 +103,18 @@ header h1 {
     transform: scale(1.02);
 }
 
-.error-msg { color: #e74c3c; font-size: 0.85em; margin-top: 10px; }
-.success-msg { color: #2ecc71; font-size: 0.85em; margin-top: 10px; }
+.error-msg { color: #e74c3c; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; }
+.success-msg { color: #2ecc71; font-size: 0.85em; margin-top: 10px; margin-bottom: 0; }
+
+.developer-credit {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 0.8em;
+    color: #95a5a6;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
 .logout-btn {
     background: #e74c3c;
